@@ -26,6 +26,20 @@ const pickArtworkUrl = (
     : undefined;
 };
 
+// Fallback artwork shown in the OS media controls when a track has none of its
+// own. Picks a random image from the set each time.
+const FALLBACK_ARTWORK_URLS = [
+  'https://nuclearplayer.com/images/nuki-studying.png',
+  'https://nuclearplayer.com/images/nuki-crawling-out.png',
+  'https://nuclearplayer.com/images/nuki-hello.png',
+  'https://nuclearplayer.com/images/nuki-listening.png',
+  'https://nuclearplayer.com/images/nuki-ready-to-work.png',
+  'https://nuclearplayer.com/images/nuki-running.png',
+];
+
+const randomFallbackArtwork = (): string =>
+  FALLBACK_ARTWORK_URLS[Math.floor(Math.random() * FALLBACK_ARTWORK_URLS.length)];
+
 const hasMediaSession = (): boolean =>
   typeof navigator !== 'undefined' && 'mediaSession' in navigator;
 
@@ -33,7 +47,7 @@ const buildArtwork = (item: QueueItem): MediaImage[] => {
   const set = item.track.artwork;
   const art = pickArtworkUrl(set, 'cover') ?? pickArtworkUrl(set, 'thumbnail');
   if (!art) {
-    return [];
+    return [{ src: randomFallbackArtwork() }];
   }
   return [
     {
