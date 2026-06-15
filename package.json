@@ -1,0 +1,26 @@
+{
+  "name": "nuclear-plugin-mpris",
+  "version": "0.1.0",
+  "description": "Exposes Nuclear playback to the OS media controls (MPRIS on Linux) via the Media Session API",
+  "author": "Richard Benson",
+  "license": "AGPL-3.0-only",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format cjs --minify --out-dir dist",
+    "dev": "tsup src/index.ts --dts --format cjs --out-dir dist --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "nuclear": {
+    "displayName": "MPRIS / Media Controls",
+    "category": "integration",
+    "permissions": ["playback-control"]
+  },
+  "dependencies": {
+    "@nuclearplayer/plugin-sdk": "^2.8.0"
+  },
+  "devDependencies": {
+    "tsup": "^8",
+    "typescript": "^5"
+  }
+}
