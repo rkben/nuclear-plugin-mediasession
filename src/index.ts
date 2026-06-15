@@ -133,7 +133,7 @@ const plugin: NuclearPlugin = {
   async onEnable(api: NuclearPluginAPI) {
     if (!hasMediaSession()) {
       api.Logger.warn(
-        'navigator.mediaSession is unavailable in this webview; MPRIS controls will not be exposed.',
+        'navigator.mediaSession is unavailable in this webview; media controls will not be exposed.',
       );
       return;
     }

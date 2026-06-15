@@ -1,4 +1,4 @@
-# Nuclear MPRIS Plugin
+# Nuclear MediaSession Plugin
 
 Exposes Nuclear's playback to your desktop's media controls (MPRIS on Linux, and
 the OS media overlay on other platforms) so you can play/pause, skip tracks, seek,
