@@ -37,4 +37,5 @@ TypeScript source (see `main` in `package.json`).
 
 ## License
 
-AGPL-3.0-only
+This is free and unencumbered software released into the public domain
+([Unlicense](https://unlicense.org)). See `LICENSE`.

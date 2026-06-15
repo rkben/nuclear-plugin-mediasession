@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Exposes Nuclear playback to the OS media controls (MPRIS on Linux) via the Media Session API",
   "author": "Richard Benson",
-  "license": "AGPL-3.0-only",
+  "license": "Unlicense",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
